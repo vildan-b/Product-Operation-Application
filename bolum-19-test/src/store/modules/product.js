@@ -29,7 +29,12 @@ const actions = {
         product.key = response.body.name;
           commit("updateProductList" , product);
           /******************  Updating the trading balance information */
-        dispatch
+          let tradeResult = {
+              purchase : product.price,
+              sale : 0,
+              count:product.count,
+          }
+        dispatch("setTradeResult", tradeResult)
       });
 
 
